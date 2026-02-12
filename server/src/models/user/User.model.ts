@@ -4,6 +4,9 @@ export interface IUser extends Document {
   name: string;
   email: string;
   password: string;
+  currency?: string;
+  monthlyBudget?: number;
+  avatar?: string;
 }
 
 const userSchema = new Schema<IUser>(
@@ -24,8 +27,20 @@ const userSchema = new Schema<IUser>(
       required: true,
       minlength: 6,
     },
+    currency: {
+      type: String,
+      default: "Rs",
+    },
+    monthlyBudget: {
+      type: Number,
+      default: 0,
+    },
+    avatar: {
+      type: String,
+      default: "",
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model<IUser>("User", userSchema);

@@ -21,6 +21,7 @@ const Dashboard = () => {
   const [chartData, setChartData] = useState<any[]>([]);
   const [transactions, setTransactions] = useState<any[]>([]);
   const [showModal, setShowModal] = useState(false);
+  const [profile, setProfile] = useState<any>(null);
 
   useEffect(() => {
     const fetchSummary = async () => {
@@ -33,6 +34,8 @@ const Dashboard = () => {
 
       const monthlyRes = await api.get("/transactions/monthly");
       const allRes = await api.get("/transactions");
+      const profileRes = await api.get("/users/profile");
+      setProfile(profileRes.data);
 
       setTransactions(allRes.data);
 
@@ -61,6 +64,15 @@ const Dashboard = () => {
 
   return (
     <MainLayout>
+      {profile && profile.monthlyBudget > 0 && (
+        <div className="bg-white p-6 rounded-2xl shadow-md mb-8">
+          <h3 className="text-gray-500 text-sm">Monthly Budget</h3>
+          <p className="text-xl font-semibold">
+            {profile.currency} {profile.monthlyBudget}
+          </p>
+        </div>
+      )}
+
       <TopCards
         income={summary.totalIncome}
         expense={summary.totalExpense}

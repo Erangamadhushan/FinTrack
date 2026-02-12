@@ -7,17 +7,17 @@ interface Props {
 const TopCards = ({ income, expense, balance }: Props) => {
   return (
     <div className="grid md:grid-cols-3 gap-6 mb-8">
-      <div className="bg-white p-6 rounded-2xl shadow-md">
+      <div className="bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl shadow-md hover:shadow-lg transition" >
         <h3 className="text-gray-500 text-sm">Total Income</h3>
         <p className="text-2xl font-bold text-green-600">Rs. {income}</p>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl shadow-md">
+      <div className="bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
         <h3 className="text-gray-500 text-sm">Total Expense</h3>
         <p className="text-2xl font-bold text-red-600">Rs. {expense}</p>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl shadow-md">
+      <div className="bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
         <h3 className="text-gray-500 text-sm">Balance</h3>
         <p
           className={`text-2xl font-bold ${

@@ -1,5 +1,8 @@
 import {
   BarChart,
+  PieChart,
+  Pie,
+  Cell,
   Bar,
   XAxis,
   YAxis,
@@ -31,9 +34,26 @@ const ActivityChart = ({ data }: Props) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="income" />
-          <Bar dataKey="expense" />
+          <Bar dataKey="income" fill="#4ade80" />
+          <Bar dataKey="expense" fill="#f87171" />
         </BarChart>
+      </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height={300} className="mt-6">
+        <PieChart>
+          <Pie
+            data={data}
+            dataKey="total"
+            nameKey="_id"
+            outerRadius={150}
+            label
+          >
+            {data.map((_, index) => (
+              <Cell key={index} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend />
+        </PieChart>
       </ResponsiveContainer>
     </div>
   );

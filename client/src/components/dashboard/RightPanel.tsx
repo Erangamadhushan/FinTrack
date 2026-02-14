@@ -33,10 +33,12 @@ const RightPanel = () => {
   }, []);
 
   return (
-    <div className="w-72 bg-white p-6 shadow-lg rounded-l-3xl hidden lg:block">
+    <div className="w-72 bg-white p-6 shadow-lg hidden lg:block max-h-screen sticky top-0 dark:bg-gray-950 border-l-2 border-l-gray-500">
       {/* Profile */}
       <div className="text-center mb-8">
-        <div className="w-16 h-16 bg-purple-200 rounded-full mx-auto mb-3"></div>
+        <div className="w-16 h-16 bg-purple-200 rounded-full mx-auto mb-3">
+          <img src="icons/profile.png" alt="Profile" className="w-full h-full object-cover rounded-full" />
+        </div>
         <h2 className="font-semibold">{auth?.user?.name}</h2>
         <p className="text-sm text-gray-500">{auth?.user?.email}</p>
       </div>

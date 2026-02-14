@@ -65,10 +65,10 @@ const Dashboard = () => {
   return (
     <MainLayout>
       {profile && profile.monthlyBudget > 0 && (
-        <div className="bg-white p-6 rounded-2xl shadow-md mb-8">
-          <h3 className="text-gray-500 text-sm">Monthly Budget</h3>
+        <div className="bg-white dark:bg-gray-800 rounded-md p-6 shadow-md mb-8 dark:text-white">
+          <h3 className="text-sm md:text-2xl font-bold">Monthly Budget</h3>
           <p className="text-xl font-semibold">
-            {profile.currency} {profile.monthlyBudget}
+            {profile.currency} {profile.monthlyBudget}.00
           </p>
         </div>
       )}
@@ -81,7 +81,7 @@ const Dashboard = () => {
       <div className="flex justify-end mb-4">
         <button
           onClick={() => setShowModal(true)}
-          className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+          className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 cursor-pointer"
         >
           + Add Transaction
         </button>

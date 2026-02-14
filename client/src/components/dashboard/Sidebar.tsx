@@ -15,12 +15,12 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-64 dark:bg-slate-800 bg-purple-700 text-white flex flex-col p-6 rounded-r-3xl shadow-xl">
+    <div className="w-64 sticky top-0 dark:bg-gray-950 bg-purple-700 text-white flex flex-col p-6 shadow-xl max-h-screen border-r-2 border-r-gray-500">
       <h1 className="text-2xl font-bold mb-10 flex justify-between items-center">
         <span>FinTrack</span>
         <button
           onClick={theme?.toggleTheme}
-          className="ml-2 text-sm bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-2 py-1 rounded"
+          className="ml-2 text-sm bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-2 py-1 rounded cursor-pointer"
         >
           {theme?.darkMode ? <SunIcon className="w-4 h-4" /> : <MoonIcon className="w-4 h-4" />}
         </button>
@@ -29,31 +29,31 @@ const Sidebar = () => {
       <nav className="flex flex-col gap-4 text-sm">
         <button
           onClick={() => navigate("/")}
-          className="text-left hover:bg-purple-600 p-2 rounded-lg"
+          className="text-left hover:bg-purple-600 p-2 rounded-lg cursor-pointer"
         >
           Dashboard
         </button>
         <button
           onClick={() => navigate("/profile")}
-          className="text-left hover:bg-purple-600 p-2 rounded-lg"
+          className="text-left hover:bg-purple-600 p-2 rounded-lg cursor-pointer"
         >
           Profile
         </button>
         <button
           onClick={() => navigate("/transactions")}
-          className="text-left hover:bg-purple-600 p-2 rounded-lg"
+          className="text-left hover:bg-purple-600 p-2 rounded-lg cursor-pointer"
         >
           Transactions
         </button>
         <button
           onClick={() => navigate("/reports")}
-          className="text-left hover:bg-purple-600 p-2 rounded-lg"
+          className="text-left hover:bg-purple-600 p-2 rounded-lg cursor-pointer"
         >
           Reports
         </button>
         <button
           onClick={() => navigate("/settings")}
-          className="text-left hover:bg-purple-600 p-2 rounded-lg"
+          className="text-left hover:bg-purple-600 p-2 rounded-lg cursor-pointer"
         >
           Settings
         </button>
@@ -62,7 +62,7 @@ const Sidebar = () => {
       <div className="mt-auto">
         <button
           onClick={logout}
-          className="w-full bg-red-500 py-2 rounded-lg hover:bg-red-600 transition"
+          className="w-full bg-red-500 py-2 rounded-lg hover:bg-red-600 transition cursor-pointer"
         >
           Logout
         </button>

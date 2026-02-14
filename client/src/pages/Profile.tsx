@@ -30,7 +30,7 @@ const Profile = () => {
     alert("Profile updated successfully!");
   };
 
-  if (loading) return <MainLayout>Loading...</MainLayout>;
+  if (loading) return <MainLayout><div className="p-8 text-center ">Loading...</div></MainLayout>;
 
   return (
     <MainLayout>

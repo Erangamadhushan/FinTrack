@@ -3,6 +3,16 @@
 
 FinTrack is a full-stack MERN-based Personal Finance Management dashboard built with a SaaS-style architecture. It allows users to track income, expenses, analyze financial data through visual reports, and manage personal budgets.
 
+## Screen Captures
+### Login
+![Login Page](./client/public/images/login.png)
+
+### Register
+![Register Page](./client/public/images/register.png)
+
+### Dashboard
+![Dashboard](./client/public/images/dashboard.png)
+
 ## 🛠️ Tech Stack
 
 ## Frontend

@@ -60,7 +60,7 @@ const Dashboard = () => {
 
     fetchData();
     fetchSummary();
-  }, []);
+  }, [showModal]);
 
   return (
     <MainLayout>
@@ -87,8 +87,8 @@ const Dashboard = () => {
         </button>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl shadow-md">
-        <h2 className="text-lg font-semibold mb-4">Activity Chart</h2>
+      <div className="bg-white dark:bg-gray-950 p-6 rounded-md">
+        <h2 className="text-lg md:text-2xl font-semibold md:pl-8 text-purple-800 dark:text-purple-600 mb-4">Activity Chart</h2>
         <ActivityChart data={chartData} />
 
         <TransactionTable transactions={transactions} />
@@ -102,7 +102,6 @@ const Dashboard = () => {
             <TransactionForm
               onSuccess={() => {
                 setShowModal(false);
-                fetchData();
               }}
             />
 

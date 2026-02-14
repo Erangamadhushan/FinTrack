@@ -34,21 +34,23 @@ const RightPanel = () => {
 
   return (
     <div className="w-72 bg-white p-6 shadow-lg hidden lg:block max-h-screen sticky top-0 dark:bg-gray-950 border-l-2 border-l-gray-500">
-      {/* Profile */}
       <div className="text-center mb-8">
         <div className="w-16 h-16 bg-purple-200 rounded-full mx-auto mb-3">
-          <img src="icons/profile.png" alt="Profile" className="w-full h-full object-cover rounded-full" />
+          <img
+            src="icons/profile.png"
+            alt="Profile"
+            className="w-full h-full object-cover rounded-full"
+          />
         </div>
         <h2 className="font-semibold">{auth?.user?.name}</h2>
         <p className="text-sm text-gray-500">{auth?.user?.email}</p>
       </div>
 
-      {/* Balance */}
       {summary && (
         <div className="bg-purple-50 p-4 rounded-xl mb-6">
           <p className="text-sm text-gray-500">Current Balance</p>
           <p className="text-xl font-bold text-purple-700">
-            Rs. {summary.balance}
+            Rs. {summary.balance}.00
           </p>
         </div>
       )}
@@ -68,9 +70,7 @@ const RightPanel = () => {
               <span>{t.category}</span>
               <span
                 className={`font-semibold ${
-                  t.type === "income"
-                    ? "text-green-600"
-                    : "text-red-600"
+                  t.type === "income" ? "text-green-600" : "text-red-600"
                 }`}
               >
                 {t.type === "income" ? "+" : "-"} Rs. {t.amount}
